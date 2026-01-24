@@ -1,13 +1,13 @@
 
-import { pgTable, text, serial, timestamp } from "drizzle-orm/pg-core";
+import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const files = pgTable("files", {
-  id: serial("id").primaryKey(),
+export const files = sqliteTable("files", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   content: text("content").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
+  createdAt: integer("created_at", { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
 });
 
 export const insertFileSchema = createInsertSchema(files).omit({ 
