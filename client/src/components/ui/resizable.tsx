@@ -18,7 +18,7 @@ const ResizablePanelGroup = ({
   />
 )
 
-const ResizablePanel = ResizablePrimitive.Panel
+const ResizablePanel = Panel
 
 const ResizableHandle = ({
   withHandle,
