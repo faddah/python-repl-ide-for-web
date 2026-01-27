@@ -172,7 +172,7 @@ export default function IDE() {
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2 text-xs text-muted-foreground bg-muted/30 px-3 py-1.5 rounded-full border border-white/5">
              <span className={`w-2 h-2 rounded-full ${isReady ? "bg-green-500" : "bg-yellow-500 animate-pulse"}`} />
-             {isReady ? "Environment Ready" : "Loading Python..."}
+              {isReady ? "Environment Ready" : "Loading Python..."}
           </div>
         </div>
       </header>
