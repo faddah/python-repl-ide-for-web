@@ -181,7 +181,7 @@ export default function IDE() {
       <div className="flex-1 flex overflow-hidden">
         
         {/* Sidebar - File Explorer */}
-        <div className="w-64 bg-secondary/30 border-r border-border flex flex-col shrink-0 hidden md:flex">
+        <div className="w-64 bg-secondary/30 border-r border-border flex-col shrink-0 hidden md:flex">
           <div className="p-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider flex items-center justify-between">
             <span>Explorer</span>
             <Dialog open={isNewFileDialogOpen} onOpenChange={setIsNewFileDialogOpen}>
