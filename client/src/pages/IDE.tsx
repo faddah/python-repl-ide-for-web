@@ -306,7 +306,7 @@ export default function IDE() {
 
             {/* Right Panel Group (Preview + Console) */}
             <ResizablePanel defaultSize={50} minSize={30}>
-              <ResizablePanelGroup direction="vertical">
+              <ResizablePanelGroup orientation="vertical">
                 
                 {/* Web Preview */}
                 <ResizablePanel defaultSize={60} minSize={20}>
