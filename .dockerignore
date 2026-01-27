@@ -1,0 +1,46 @@
+# Node modules
+node_modules
+npm-debug.log
+
+# Build output
+dist
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.vscode/**
+.idea
+
+# Environment files
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test files
+coverage
+.nyc_output
+
+# Replit specific
+.replit
+.config
+
+# TypeScrip Upgrader
+.tsupgrader
+.tsupgrader/**
+.tsupgrader/KB/**
+
+# Build artifacts
+*.tsbuildinfo
