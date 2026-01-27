@@ -3,6 +3,7 @@
         "cmdk",
         "jridgewell",
         "memorystore",
+        "Pyodide",
         "replit",
         "vaul",
         "wouter"
