@@ -1,4 +1,5 @@
 {
+    "$schema": "vscode://schemas/settings/folder",
     "cSpell.words": [
         "cmdk",
         "healthcheck",
