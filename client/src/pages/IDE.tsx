@@ -139,7 +139,7 @@ export default function IDE() {
             <div className="bg-primary/20 p-1.5 rounded-md">
               <Code2 className="w-5 h-5 text-primary" />
             </div>
-            <span className="font-mono text-lg hidden md:block">PyLab IDE</span>
+            <span className="font-mono text-lg hidden md:block">Python REPL IDE</span>
           </div>
 
           <div className="h-6 w-px bg-border mx-2 hidden md:block" />
