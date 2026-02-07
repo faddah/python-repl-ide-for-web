@@ -7,6 +7,9 @@ WORKDIR /app
 # Install build dependencies needed for native modules
 RUN apk add --no-cache python3 make g++
 
+# Create data directory for SQLite database (mounted from volume)
+RUN mkdir -p /data && chmod 755 /data
+
 # Copy package files
 COPY package*.json ./
 
