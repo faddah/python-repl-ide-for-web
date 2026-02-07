@@ -27,7 +27,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - DATABASE_URL=file:./taskManagement.db
+      # Database path points to the shared volume
+      - DATABASE_URL=file:/data/taskManagement.db
     volumes:
       # Persist the SQLite database
       - ./taskManagement.db:/app/taskManagement.db
