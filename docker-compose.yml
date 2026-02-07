@@ -1,6 +1,22 @@
 version: '3.8'
 
 services:
+  # SQLite Database Container
+  # This container manages the SQLite database volume
+  # Only accessible via the internal 'backend' network
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    container_name: code-canvas-db
+    volumes:
+      - sqlite-data:/data
+    networks:
+      - backend
+    restart: unless-stopped
+    # No ports exposed - completely private container
+
+  # Main Application Container
   code-canvas:
     build:
       context: .
