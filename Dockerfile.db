@@ -1,0 +1,33 @@
+# Minimal Alpine-based container for SQLite database management
+# This container owns the SQLite database volume and provides utilities for backup/maintenance
+FROM alpine:3.20
+
+# Install SQLite and useful utilities
+RUN apk add --no-cache \
+    sqlite \
+    sqlite-libs \
+    bash \
+    tini
+
+# Create directory for the database
+RUN mkdir -p /data && chmod 755 /data
+
+# Set working directory
+WORKDIR /data
+
+# Create a non-root user for security
+RUN addgroup -S dbgroup && adduser -S dbuser -G dbgroup
+RUN chown -R dbuser:dbgroup /data
+
+# Switch to non-root user
+USER dbuser
+
+# Volume for persistent database storage
+VOLUME ["/data"]
+
+# Use tini as init to handle signals properly
+ENTRYPOINT ["/sbin/tini", "--"]
+
+# Keep container running - this is a sidecar for volume management
+# The database file is accessed via the shared volume, not network
+CMD ["sh", "-c", "echo 'SQLite database volume container running...' && tail -f /dev/null"]
