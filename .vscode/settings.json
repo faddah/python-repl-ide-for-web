@@ -1,12 +1,17 @@
 {
     "$schema": "vscode://schemas/settings/folder",
     "cSpell.words": [
+        "addgroup",
+        "adduser",
         "cmdk",
+        "dbgroup",
+        "dbuser",
         "healthcheck",
         "jridgewell",
         "memorystore",
         "Pyodide",
         "replit",
+        "tini",
         "tsupgrader",
         "Upgrader",
         "vaul",
