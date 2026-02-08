@@ -46,3 +46,24 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+networks:
+  # Internal network - not accessible from outside
+  # Used for communication between app and db containers
+  backend:
+    driver: bridge
+    internal: true
+
+  # External network - allows app to receive incoming connections
+  frontend:
+    driver: bridge
+
+volumes:
+  # Named volume for SQLite database persistence
+  # Data survives container restarts and rebuilds
+  sqlite-data:
+    driver: local
+
+  # Named volume for local application data
+  local-data:
+    driver: local
