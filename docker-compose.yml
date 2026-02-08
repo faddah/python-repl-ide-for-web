@@ -30,8 +30,8 @@ services:
       # Database path points to the shared volume
       - DATABASE_URL=file:/data/taskManagement.db
     volumes:
-      # Persist the SQLite database
-      - ./taskManagement.db:/app/taskManagement.db
+      # Mount the shared SQLite data volume
+      - sqlite-data:/data
       # Optional: persist the .local directory if needed
       - ./.local:/app/.local
     restart: unless-stopped
