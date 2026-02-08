@@ -2,6 +2,12 @@
 node_modules
 npm-debug.log
 
+# SQLite database files (use volume-mounted DB in containers)
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
 # Build output
 dist
 
