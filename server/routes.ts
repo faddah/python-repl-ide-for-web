@@ -31,7 +31,7 @@ export async function registerRoutes(
 
   app.put(api.files.update.path, async (req, res) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(Array.isArray(req.params.id) ? req.params.id[0] : req.params.id);
       const input = api.files.update.input.parse(req.body);
       const file = await storage.updateFile(id, input);
       if (!file) {
@@ -49,7 +49,7 @@ export async function registerRoutes(
 
   app.delete(api.files.delete.path, async (req, res) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(Array.isArray(req.params.id) ? req.params.id[0] : req.params.id);
       await storage.deleteFile(id);
       res.status(204).send();
     } catch (err) {
